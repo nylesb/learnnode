@@ -3,7 +3,9 @@
 */
 
 var User = function() {
-	this.firstName = "Nyles";
+	this.firstName = function() {
+		return "";
+	};
 	this.lastName = "Breecher";
 };
 
