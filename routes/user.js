@@ -15,6 +15,10 @@ var User = function() {
 		last = (typeof name === 'string') ? name : last;
 		return last;
 	};
+	
+	this.fullName = function() {
+		return first + " " + last;
+	};
 };
 
 module.exports = User;
