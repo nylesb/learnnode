@@ -3,14 +3,18 @@
 */
 
 var User = function() {
+	var first = "";
+	var last = "";
+	
 	this.firstName = function(name) {
-		if (typeof name === 'string')
-		{
-			return name;
-		}
-		return "";
+		first = (typeof name === 'string') ? name : first;
+		return first;
 	};
-	this.lastName = "Breecher";
+	
+	this.lastName = function(name) {
+		last = (typeof name === 'string') ? name : last;
+		return last;
+	};
 };
 
 module.exports = User;

@@ -11,11 +11,6 @@ describe("User object", function() {
 			var user = new User();
 			user.should.be.an.instanceOf(User);
 		});
-		it("should access the User's second name", function() {
-			var user = new User();
-			var lastNameType = typeof user.lastName;
-			lastNameType.should.equal('string');
-		});
 	});
 	describe("First Name", function() {
 		it("should return an empty string initiated", function() {
@@ -28,7 +23,23 @@ describe("User object", function() {
 		it("should set and get first name", function() {
 			var user = new User();
 			var testName = "Nyles";
-			user.firstName(testName).should.equal(testName);
+			user.firstName(testName);
+			user.firstName().should.equal(testName);
+		});
+	});
+	describe("Last Name", function() {
+		it("should return an empty string initiated", function() {
+			var user = new User();
+			var lastName = user.lastName();
+			var lastNameType = typeof lastName;
+			lastNameType.should.equal('string');
+			lastName.should.equal("");
+		});
+		it("should set and get first name", function() {
+			var user = new User();
+			var testName = "Nyles";
+			user.lastName(testName);
+			user.lastName().should.equal(testName);
 		});
 	});
 });
