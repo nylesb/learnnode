@@ -42,4 +42,15 @@ describe("User object", function() {
 			user.lastName().should.equal(testName);
 		});
 	});
+	describe("Full Name", function() {
+		it("should return concatenation of first and last name", function() {
+			var user = new User();
+			var first = "Nyles";
+			var last = "Breecher";
+			var full = first + " " + last;
+			user.firstName(first);
+			user.lastName(last);
+			user.fullName().should.equal(full);
+		});
+	});
 });
