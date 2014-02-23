@@ -8,6 +8,7 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var mysql = require('mysql');
 
 var app = express();
 
@@ -37,9 +38,21 @@ app.get('/login', function(req, res) {
 	res.sendfile("./views/login.html");
 });
 
+var db = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'nyles',
+  password : 'secret'
+});
+
 app.post('/users/login', function(req, res) {
 	var body = JSON.stringify(req.body);
-	res.send(body);
+	var query = "SELECT *";
+	
+	db.query(query, function(err, rows) {
+		var text = err | rows;
+		res.send(text);
+	});
+	
 });
 
 http.createServer(app).listen(app.get('port'), function(){
