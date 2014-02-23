@@ -3,7 +3,11 @@
 */
 
 var User = function() {
-	this.firstName = function() {
+	this.firstName = function(name) {
+		if (typeof name === 'string')
+		{
+			return name;
+		}
 		return "";
 	};
 	this.lastName = "Breecher";
