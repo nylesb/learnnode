@@ -37,6 +37,11 @@ app.get('/login', function(req, res) {
 	res.sendfile("./views/login.html");
 });
 
+app.post('/users/login', function(req, res) {
+	var body = JSON.stringify(req.body);
+	res.send(body);
+});
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
