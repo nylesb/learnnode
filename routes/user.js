@@ -2,4 +2,8 @@
 * This is user
 */
 
-module.exports.name = "Nyles";
+var User = function() {
+	this.firstName = "Nyles";
+};
+
+module.exports = User;
