@@ -13,7 +13,7 @@ describe("User object", function() {
 		});
 		it("should access the User's first name", function() {
 			var user = new User();
-			var firstNameType = typeof user.firstName;
+			var firstNameType = typeof user.firstName();
 			firstNameType.should.equal('string');
 		});
 		it("should access the User's second name", function() {
